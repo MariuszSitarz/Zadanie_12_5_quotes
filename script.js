@@ -1,9 +1,12 @@
 /**
  * Created by Kuba9000 on 20.10.2017.
  */
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
+
+    $('.main').fadeIn(3000);
+
     getQuote();
-    $('.trigger').click(function() {
+    $('.trigger').click(function () {
         getQuote();
     });
 
@@ -14,12 +17,13 @@ document.addEventListener("DOMContentLoaded", function() {
     function getQuote() {
         $.getJSON(quoteUrl, createTweet);
         $.getJSON(prefix + quoteUrl, createTweet);
-        $.ajaxSetup({ cache: false });
+        $.ajaxSetup({cache: false});
     }
+
     function createTweet(input) {
         var data = input[0];
 
-       var quoteText = $(data.content).text().trim();
+        var quoteText = $(data.content).text().trim();
         var quoteAuthor = data.title;
 
         if (!quoteAuthor.length) {
@@ -36,7 +40,5 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
     }
-
-getQuote();
-
+    
 });
