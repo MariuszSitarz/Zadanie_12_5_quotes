@@ -38,7 +38,7 @@ a {
 .tweet {
     color: #0084b4;
     display: block;
-    padding: 10px;
+    padding: 20px;
     transition: all .2s ease-in-out;
 }
 
